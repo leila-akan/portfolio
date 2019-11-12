@@ -6,6 +6,14 @@ body{
   background-color: #FFFF ;
   font-size: 18px;
 }
+.retroshadow {
+  color: #d43900;
+  background-color: #d5d5d5;
+  letter-spacing: .05em;
+  text-shadow:
+    4px 4px 0px #d5d5d5,
+    7px 7px 0px rgba(0, 0, 0, 0.2);
+}
 .skip a{
   background: white;
   left: 0;
@@ -45,7 +53,7 @@ nav a:hover{
   display: grid;
   grid-template-columns: auto;
   grid-row-gap: 15px;
-  grid-template-rows: 1fr 2fr 3fr 2fr 1fr;
+  grid-template-rows: .5fr 2fr 3fr 2fr 1fr;
   min-height: 100%;
 }
 
@@ -55,6 +63,7 @@ header{
   color: #d43900;
   font-family: 'Montserrat', sans-serif;
   padding: 1em;
+  max-height: 500px;
 }
 
 header h1{
@@ -142,6 +151,14 @@ div.desc {
   margin: auto;
   grid-row: 4/span 1;
 }
+.pictures img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.pictures img:hover{
+  -webkit-filter: none;
+  filter: none;
+}
 .about-text{
   text-align: center;
   grid-row: 2/span 1;
@@ -174,11 +191,56 @@ div.desc {
   grid-row: 4/span 1;
   padding: 1em;
 }
+.assignment-footer{
+  grid-row: 4/ span 1;
+}
+
+.form{
+  border: 1px dashed black;
+  justify-content: center;
+}
+.form label{
+  display: block;
+  text-align: center;
+  padding: 20px;
+}
+.form input{
+  border: 1px solid #d43900;
+}
+.contact-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 15px;
+  grid-template-rows: .5fr 1fr 1fr 1fr;
+  min-height: 100%;
+}
+
+.form{
+  grid-column: 1/-1;
+  grid-row: 4/ span 1;
+}
+
+
+.parallax{
+  background-attachment: fixed; /* Parallax effect */
+  background-image: url("../images/contact.jpg");      /* Your code here - Link to header.jpg in the images
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;               /* Parallax effect */
+  grid-column: 1/-1;
+  grid-row: 3/span 1;
+
+  /*Your code here - cover the entire row*/
+}
+
 
 @@media only screen and (min-width: 768px) {
   .nav{
     text-align: center;
   }
+
 .about-container{
     display: grid;
     grid-template-columns: 1fr;
@@ -186,6 +248,7 @@ div.desc {
     grid-template-rows: .2fr .1fr .2fr 3fr .2fr;
     min-height: 100%;
   }
+
   .assignment-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -197,11 +260,14 @@ div.desc {
 @media only screen and (min-width: 990px){
 .container{
       grid-template-columns: 1fr 2fr 1fr;
-      grid-template-rows: 1fr 2fr 3fr 1fr;
+      grid-template-rows: .5fr 2fr 3fr 1fr;
     }
 .nav{
   text-align: right;
   font-size: 2em;
+}
+.nav li{
+  margin-left: 2em;
 }
 .intro{
   grid-column: 1/span 2;
@@ -213,6 +279,11 @@ div.desc {
 }
 .footer{
   grid-row: 4/ span 1;
+}
+.pictures{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 200px;
 }
 .about-container{
   display: grid;
